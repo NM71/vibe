@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vibe/features/auth/presentation/cubits/auth_cubit.dart';
+import 'package:vibe/features/home/presentation/components/my_drawer.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -21,16 +22,10 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text("Your Vibe"),
         centerTitle: true,
-        actions: [
-          // logout button
-          IconButton(onPressed: () {
-            context.read<AuthCubit>().logout();
-          }, icon: const Icon(Icons.logout))
-        ],
       ),
 
       // DRAWER
-      drawer: const Drawer(),
+      drawer: const MyDrawer(),
     );
   }
 }
